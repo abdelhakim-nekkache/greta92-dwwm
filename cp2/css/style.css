@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: bisque;
+    background: linear-gradient(to right, bisque, orange);
+    background: radial-gradient(bisque, cornsilk, white);
+    background: url(../pics/soleilSkull.png) no-repeat top right, url(../pics/plane_PNG5219.png) no-repeat bottom right, radial-gradient(bisque, cornsilk, white);
+}
+
+h1,h2,h3,h4 {
+    font-family: josefin sans, sans-serif;
+}
+
+h1 {
+    color: red;
+} 
+
+#top {
+    text-shadow: 0 0 10px orange;
+}
+
+
+pre {
+    color: blue;
+    border-left: solid 2px #0984e3;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+dt {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: .5rem 0;
+}
+
+dd, p {
+    text-align: justify;
+}
+
+figure img {
+    border-radius: 50%;
+    border-radius: 2em 3em 4em 5em;
+    border-radius: 50% 20% / 10% 40%;
+}
+
+table {
+    width: 100%;
+}
+
+table, th, td {
+    border: black solid 1px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tbody tr :hover {
+    background-color: gold;
+    cursor: pointer;
+     }
+
+thead tr, tfoot tr {
+    background-color:darkgray;
+    color: white;
+}
+
+
+table tbody tr td:nth-child(3) {
+    text-align: right;
+}
+
+table tbody tr td:nth-child(2) {
+    text-align: center;
+}
+
+figure img {
+    box-shadow:  5px 5px 7.5px black;
+    margin-bottom: 1rem;
+}
+
+ol ol {
+    list-style-type: lower-roman;
+}
+
+ul {
+    list-style-image: url(../pics/bullet.png);
+}

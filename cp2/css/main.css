@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+html, body {
+    height: 100%;
+    width: ;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(../pics/tontonFL.jpg);
+    background-size: cover;
+}
+
+/* WRAPPER */
+
+#wrapper {
+    background-color: rgba(255, 255,255, 0.5);
+}
+
+#wrapper>* {
+    margin: 1rem 0 2rem 0;
+
+}
+
+/* EN-TETE INDEX */
+
+#myheader {
+    display: flex;
+}
+
+#myheader>div {
+    text-align: center;
+}
+
+#logo {
+    width: 20%;
+}
+
+#name {
+    width: 80%;
+}
+
+#name h1 {
+    height: 5rem;
+    line-height: 5rem;
+}
+
+#logo img {
+    width: 7rem;
+}
+
+/* MENU */
+
+
+
+#menu .items {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+#menu .items a {
+    text-decoration: none;
+    border: maroon solid .25rem;
+    color: maroon;
+    box-shadow: 0 0 1rem grey;
+    background-color: cornsilk;
+    padding: .4rem;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+#menu .items a:hover {
+    background-color: maroon;
+    color: cornsilk;
+    border: cornsilk solid .25rem;
+}
