@@ -11,15 +11,14 @@ html, body {
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url(../pics/tontonFL.jpg);
+    background-image: url(../pics/211.jpg);
     background-size: cover;
+    background-attachment: fixed;
 }
 
 /* WRAPPER */
 
-#wrapper {
-    background-color: rgba(255, 255,255, 0.5);
-}
+
 
 #wrapper>* {
     margin: 1rem 0 2rem 0;
@@ -37,25 +36,60 @@ body {
 }
 
 #logo {
-    width: 20%;
+    width: 1000%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    color: powderblue;
 }
 
 #name {
     width: 80%;
 }
+ #logo h1 {
+     animation: neon 5s infinite;
+     color: black;
+ }
 
-#name h1 {
-    height: 5rem;
-    line-height: 5rem;
+@keyframes neon {
+    from { 
+        text-shadow: 0 0 .3rem rgb(247, 1, 1);
+    }
+
+    20% {
+        text-shadow: .0 0 .3rem tomato;
+        transform: rotate(5deg);
+    }
+
+    40% {
+        text-shadow: 0 0 .3rem rgb(63, 63, 236);
+    }
+
+    60% {
+        text-shadow: 0 0 .3rem rgb(68, 189, 52);
+        transform: rotate(0deg);
+    }
+
+    80% {
+        text-shadow: 0 0 .3rem violet;
+        transform: rotate(-5deg);
+    }
+
+    to {
+        text-shadow: 0 0 .3rem rgb(34, 153, 168);
+        transform: rotate(0);
+    }
 }
 
 #logo img {
-    width: 7rem;
+    width: 10rem;
 }
 
 /* MENU */
 
+nav {
+    padding-bottom: 200px;
 
+}
 
 #menu .items {
     display: flex;
@@ -68,8 +102,8 @@ body {
 
 #menu .items a {
     text-decoration: none;
-    border: maroon solid .25rem;
-    color: maroon;
+    border: rgb(145, 136, 136) solid .25rem;
+    color: rgb(0, 0, 0);
     box-shadow: 0 0 1rem grey;
     background-color: cornsilk;
     padding: .4rem;
@@ -78,7 +112,140 @@ body {
 }
 
 #menu .items a:hover {
-    background-color: maroon;
+    background-color: rgb(0, 0, 0);
     color: cornsilk;
     border: cornsilk solid .25rem;
+}
+
+#emps {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.emp{
+    margin: 1em;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.member {
+    border: solid black .4em;
+    border-radius: 10em;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 110px;
+    border-color: powderblue;
+}
+
+.emp figcaption {
+    text-align: center;
+    font-size: 150%;
+    border: black solid 0.1em;
+    border-radius: 2em;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#emps .boy:hover {
+    background-color: blue;
+    border-color: black;
+    transition: all .5s ease-out;
+    transform: scale(2);
+    cursor: pointer;
+}
+
+#emps .girl:hover {
+    background-color: pink;
+    border-color: black;
+    transition: all .5s ease-out;
+    transform: scale(2);
+    cursor: pointer;
+}
+
+#interview {
+    display: flex;
+}
+
+#interview .media {
+    border: solid black 5px;
+    background-color: rgba(172, 154, 154, 0.7);
+    border-radius: 10px;
+    margin: 5px 5px;
+    text-align: center;
+    margin: 50px 50px;
+}
+
+#interview .media p {
+    padding: 20px;
+}
+
+#interview .media h2 {
+   margin-bottom: 30px;
+}
+
+#conv {
+    margin: 0 20px;
+    border-radius: 20px;
+}
+
+#conv:hover {
+    cursor: pointer;
+    transition: all .5s ease-out;
+    transform: scale(1.5);
+}
+
+
+/* ---------------FOOTER------------*/
+
+#bottom {
+    background-color: #000;
+    color: #fff;
+}
+
+#bottom ul {
+    list-style: none;
+    padding: 0;
+}
+
+#bottom .level1 {
+        display: flex;
+        justify-content: center;
+
+}
+
+#bottom .level1>li{
+    margin: 1rem 0;
+    padding: 0 2rem;
+    border-left: dotted #fff .25rem;
+}
+
+#bottom .level1>li:first-child {
+    border-left: none;
+}
+
+#bottom h3 {
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+#bottom a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*-----------FORM---------------*/
+
+form {
+    color: white;
+    justify-content: right;
+}
+
+form div {
+    margin: .5rem 0;
+}
+
+form div>*:first-child {
+    display: inline-block;
+    width: 25%;
+    font-weight: bold;
+    text-align: right;
 }
