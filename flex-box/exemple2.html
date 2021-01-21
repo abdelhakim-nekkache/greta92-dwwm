@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox - exemple 2</title>
+    <style>
+        section {
+            display: flex;
+            border: 1px solid red;
+            height: 500px;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+        section > div {
+            border: 1px solid red;
+            flex: 1 1 0em;
+        }
+        section div:last-child{
+            flex-basis: 100%;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>lorem.</div>
+        <div>lorem ipsum.</div>
+        <div>lorem lorem lorem.</div>
+    </section>
+</body>
+</html>

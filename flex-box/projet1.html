@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 1 flexbox</title>
+    <style>
+        *{
+            border: 1px solid black;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        body > * {
+            flex: 1 1 0;
+        }
+        header, footer{
+            flex-basis: 100%;
+        }
+        header{
+            display: flex;
+            height: 10vh;
+            justify-content: space-between;
+            align-items:  center;
+        }
+        header > *{
+            flex-basis: 6em;
+        }
+        header img {
+            max-width: 100%;
+        }
+        section{
+            display: flex;
+        }
+        section > *{
+            flex: 1 1 0em;
+        }
+        nav {
+            flex-grow: 15;
+        }
+        main{
+            flex-grow: 60;
+        }
+        aside{
+            flex-grow: 25;
+            align-self: flex-start;
+        }
+        footer {
+            text-align: center;
+            height: 5vh;
+        }
+        main{
+            display: flex;
+            flex-grow: 60;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-between;
+
+        }
+        main > div { 
+            margin: 1vh;
+            text-align: center;
+        }
+        div img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div><img src="../flex-box/pics/index.png" alt=""></div>
+        <h1>CSS flexbox</h1>
+        <div><a href="https://css-tricks.com">Connexion</a></div>
+    </header>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#">Acceuil</a> </li>
+                <li><a href="#">Notre équipe</a> </li>
+                <li><a href="#">inscription</a> </li>
+                <li><a href="#">Réalisations</a></li>
+                <li><a href="#">Documentation</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div>
+                <figure>
+                    <img src="../flex-box/pics/avenger.jpeg" alt="">
+                    <figcaption>équipe</figcaption>
+                </figure>
+            </div>
+            <div>
+                <figure>
+                    <img src="../flex-box/pics/avenger.jpeg" alt="">
+                    <figcaption>équipe</figcaption>
+                </figure>
+            </div>
+            <div>
+                <figure>
+                    <img src="../flex-box/pics/avenger.jpeg" alt="">
+                    <figcaption>équipe</figcaption>
+                </figure>
+            </div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure></div>
+            <div>                <figure>
+                <img src="../flex-box/pics/avenger.jpeg" alt="">
+                <figcaption>équipe</figcaption>
+            </figure>
+        </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+        </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+    </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+        </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+        </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+        </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+        </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+        </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+        </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+        </div>
+        <div>                <figure>
+            <img src="../flex-box/pics/avenger.jpeg" alt="">
+            <figcaption>équipe</figcaption>
+        </figure>
+        </div>
+        </main>
+        <aside>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptate blanditiis tenetur, maxime libero sapiente dicta velit nam exercitationem! Optio asperiores quibusdam accusantium maiores ut blanditiis incidunt eum qui aliquam.Veniam tempora obcaecati dolorum necessitatibus, magnam alias sequi atque qui velit molestiae veritatis aut animi perferendis nobis tempore repellendus saepe eligendi nemo facilis quas totam! Molestiae et unde cum voluptas.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure adipisci at eveniet enim, molestias aut in, velit cumque nesciunt corrupti quod placeat quia repellat sunt? Dolorem ratione reprehenderit repellat cumque.Odio quasi, delectus debitis, ea quaerat repellat quod, assumenda corporis omnis id velit vitae quidem molestiae repudiandae? Aperiam assumenda, rerum soluta saepe ratione fugiat nobis, corporis earum nulla dicta rem.
+        </aside>
+    </section>
+    <footer>
+        <p>&copy; Darons codeur greta 92 © 2020-21 </p>
+    </footer>
+</body>
+</html>

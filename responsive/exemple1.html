@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>RWD - Exemple 1</title>
+    <style>
+        div {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+        }
+
+        #div1 {
+            position: relative;
+            top: 500px;
+            left: 500px;
+        }
+        #child1{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50px;
+        }
+
+        #div2{
+            position: relative;
+            top: 200px;
+        }
+        
+        #child2{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50px;
+            left: 149px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="child1"></div>
+    </div>
+    <div id="div2">
+        <div id="child2"></div>
+    </div>
+</body>
+</html>
