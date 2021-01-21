@@ -24,7 +24,7 @@ function writeCookie(name, value, duration) {
     }
     // écrit le cookie
     document.cookie = name + "=" + value + ";expires=" + dToday.toLocaleString() + ";path=;SameSite=None;Secure"; 
- }
+ };
 
 
 
@@ -44,7 +44,7 @@ function readCookie(name) {
             return aCookie[1];
         }
     }
-}
+};
 
 
 

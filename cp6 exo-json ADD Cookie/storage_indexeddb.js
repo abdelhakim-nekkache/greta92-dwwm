@@ -3,7 +3,7 @@
  * formulaire sous forme d'objets.
  */
 
- document.getElementById('saveIndexedDB').addEventListener(
+ document.getElementById('readIndexedDB').addEventListener(
     'click',
     function() {
         // Si IDB est supporté
@@ -89,4 +89,67 @@
         }
     },
     false
+ );
+
+
+ document.getElementById('readIndexedDB').addEventListener(
+     'click',
+     function () {
+        // Si IDB supporté
+        if (window.indexedDB) {
+            // Ouvre BDD
+            let oCnn = window.indexedDB.open
+            ('Darons-Coders', 1);
+
+            // Si ouverture KO
+            oCnn.addEventListener(
+                'error',
+                function (evt) {
+                    alert('Erreur : ' + evt);
+                },
+                false
+            );
+            // Si ouverture OK 
+            oCnn.addEventListener(
+                'success',
+                function () {
+                    let oDB = oCnn.result;
+                    let oTx = oDB.transaction(['Repertoire'], 'readonly');
+                    let oStore = oTx.objectStore('Repertoire');
+                    let oReq = oStore.openCursor();
+
+                    // Si ouverture curseur KO
+                    oReq.addEventListener(
+                        'error',
+                        function(evt) {
+                            alert('Erreur : ' + evt );
+                        },
+                        false
+                    );
+                    // Si ouverture curseur OK
+                    oReq.addEventListener(
+                        'success',
+                        function(evt) {
+                            let oCursor = evt.target.result;
+                            if (oCursor) {
+                                console.log(oCursor.value);
+                                oCursor.continue();
+                            }
+                        },
+                        false
+                    );
+                    // Si transaction fini
+                    oTx.addEventListener(
+                        'complete',
+                        function() {
+                            oDB.close();
+                        },
+                        false
+                    );
+                },
+                false
+            );
+        }
+     },
+     false
  );
