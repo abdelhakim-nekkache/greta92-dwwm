@@ -1,0 +1,3 @@
+# Sous Ubuntu mettre cette directive dans le fichier
+# sudo nano /etc/apache2/sites-available/000-default.conf
+ErrorDocument 404 http://localhost/colombes/cp7/404.html
