@@ -16,7 +16,7 @@
             <?php
             include_once('team.php');
             $diff = (strtotime(date('Y-m-d')) - strtotime('2020-11-02')) / 60 / 60 / 24;
-            echo ' Développé par ' . PRENOM . ', Daron Coder depuis ' . $diff . ' jours.';
+            echo ' Développé par ' . $members[11][0] . ', Daron Coder depuis ' . $diff . ' jours.';
             ?>
         </p>
         <hr class="my-4">
