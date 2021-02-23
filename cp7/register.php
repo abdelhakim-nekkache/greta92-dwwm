@@ -1,6 +1,6 @@
 <?php
 // Tester avec MYSQLI si le user est reconnu ou pas :
-include_once('constantes.php');
+include_once('constants.php');
 
 // 1. connexion à bdd
 $cnn = mysqli_connect(HOST, USER, PASS, DB);
@@ -47,14 +47,7 @@ if ($nb === 1) {
       // Corps du mail
       $url = 'http://' . $_SERVER['HTTP_HOST'] . '/colombes/cp7/register2.php?m=' . $mail;
       $url = urldecode($url);
-        $html = '
-        <!DOCTYPE html>
-        <html lang="fr">
-        <head>
-        <meta charset="UTF-8">
-        </head>
-        <body>
-      ';
+      $html = '';
       $html = '<h1>Inscription Northwind Traders</h1>';
       $html .= '<p>Bonjour ' . $_POST['fname'] . ' et bienvenu(e) sur notre site.';
       $html .= '<p>Clique sur le lien suivant pour valider ton inscription : <a href="'.$url.'"></a>' ;

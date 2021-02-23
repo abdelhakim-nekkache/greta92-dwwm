@@ -1,3 +1,10 @@
+<?php
+session_start();
+$connected = false;
+if (isset($_SESSION['connected']) && $_SESSION['connected']) {
+    $connected = $_SESSION['connected'];
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,9 +28,52 @@
         </p>
         <hr class="my-4">
         <p>Cliquer sur le bouton ci-dessous pour accéder au back-office (user et mot de passe requis) :</p>
-        <a class="btn btn-success btn-lg" href="login.php" role="button">Connexion</a>
-        <a class="btn btn-warning btn-lg" href="#" role="button" data-toggle="modal" data-target="#staticBackdrop">Inscription</a>
+        <a class="btn btn-danger btn-lg" href="logout.php" role="button" style="display:<?php echo ($connected ? '' : 'none'); ?>">Déconnexion</a>
+        <span style="display:<?php echo (!$connected ? '' : 'none'); ?>">
+            <a class="btn btn-success btn-lg" href="#" role="button" data-toggle="modal" data-target="#login">Connexion</a>
+            <a class="btn btn-warning btn-lg" href="#" role="button" data-toggle="modal" data-target="#register">Inscription</a>
+        </span>
     </div>
+
+    <?php
+    // SUCCES : User créé
+    if (isset($_GET['user']) && !empty($_GET['user'])) {
+        if ($_GET['user'] === 'ok') {
+            $html = '
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Félicitations !</strong> votre compte a été créé avec succès.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>';
+            echo $html;
+        }
+    }
+    if (isset($_GET['c']) && !empty($_GET['c'])) {
+        // ECHEC : Connexion KO
+        if ($_GET['c'] == 1) {
+            $html = '
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Attention !</strong> login ou mot de passe incorrect.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>';
+            echo $html;
+        }
+        // AVERTISSEMENT : Déconnexion OK
+        elseif ($_GET['c'] == 2) {
+            $html = '
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Avertissement !</strong> Connexion échue.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>';
+            echo $html;
+        }
+    }
+    ?>
 
     <h2>Membres de l'équipe</h2>
     <section id="team" class="d-flex flex-wrap justify-content-around">
@@ -62,8 +112,8 @@
         </section>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- Modal Inscription -->
+    <div class="modal fade" id="register" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form action="register.php" method="post">
@@ -76,7 +126,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="fname">Prénom :</label>
-                            <input type="text" name="fname" id="fname" pattern="[a-zA-Z\u00C0-\u00FF' '\-]{1,30}" required class="form-control">
+                            <input type="text" name="fname" id="fname" pattern="[a-zA-Z\u00C0-\u00FF '\-]{1,30}" required class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="mail">Courriel :</label>
@@ -103,6 +153,36 @@
                                 echo $html;
                                 ?>
                             </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <input type="submit" value="Valider" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Connexion -->
+    <div class="modal fade" id="login" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="login.php" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Connexion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="mail">Courriel :</label>
+                            <input type="email" name="mail" id="mail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Mot de passe :</label>
+                            <input type="password" name="pass" id="pass" pattern="[A-Za-z0-9@$*!? ]{8,}" class="form-control" required>
                         </div>
                     </div>
                     <div class="modal-footer">
